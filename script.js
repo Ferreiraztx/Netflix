@@ -35,7 +35,7 @@ const imagens = [
         nome: "Início da Nossa História", 
         img: "IMG_6787_jpg.JPG", 
         album: albumHistoria,
-        musica: "O Amor Coloriu- Luan Santana - Luan Santana (youtube).mp3" // Nome da música do 1º álbum
+        musica: "Luan Santana - TE VIVO (Registro Histórico) - Luan Santana (youtube).mp3" // Nome da música do 1º álbum
     },
     { 
         nome: "Formando", 
