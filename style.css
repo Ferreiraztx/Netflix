@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #141414;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* PERFIS */
+.profile-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.profile-content h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.profile-list {
+  display: flex;
+  gap: 20px;
+}
+.profile-card {
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  transition: 0.3s;
+}
+.profile-card:hover {
+  transform: scale(1.1);
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid transparent;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.profile-card:hover .profile-img {
+  border-color: white;
+}
+.profile-card span {
+  display: block;
+  margin-top: 10px;
+  color: gray;
+  font-size: 1.2rem;
+}
+
+/* SITE E BANNER DINÂMICO */
+.main-site {
+  transition: opacity 0.8s ease-in;
+}
+.navbar {
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.nav__logo {
+  width: 100px;
+}
+
+.banner { 
+    height: 65vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 4%; 
+    position: relative; 
+    overflow: hidden;
+    /* Sombra interna nas laterais e no topo para não ficar "cortado" */
+    box-shadow: inset 100px 0 100px -50px rgba(20, 20, 20, 0.8), 
+                inset 0 100px 100px -50px rgba(20, 20, 20, 0.8);
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    z-index: 0;
+    filter: brightness(0.6);
+    
+    /* MUDANÇA AQUI: Aumentamos o tempo e suavizamos a curva */
+    transition: background-image 2s ease-in-out; 
+    
+    /* Garante que a imagem não "pule" ao carregar */
+    background-repeat: no-repeat;
+}
+
+.banner__contents { 
+    position: relative;
+    z-index: 10; 
+}
+.banner__contents h1 {
+  font-size: 3.5rem;
+}
+/* 2. O fade de baixo (que você já tem) agora fica mais alto e suave */
+.banner--fadeBottom { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%; /* Aumentamos para cobrir o fundo todo suavemente */
+    background: linear-gradient(
+        to top, 
+        #141414 5%,            /* Preto sólido embaixo */
+        transparent 50%,       /* Transparente no meio */
+        rgba(20, 20, 20, 0.5) 100% /* Sombra suave no topo */
+    ); 
+    z-index: 1;
+}
+
+/* FILMES */
+.row {
+  padding: 100px 4% 40px 4%;
+  width: 100%;
+  clear: both;
+}
+.row__posters {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* Aumentei de 20px para 40px para dar mais espaço */
+  flex-wrap: wrap;
+}
+.row__poster {
+  width: 300px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+.row__poster:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+.modal__content {
+  background: #181818;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.modal__header {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+.modal__body {
+  padding: 25px;
+  text-align: center;
+}
+.play-btn {
+  background: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+/* TELA CHEIA DO SLIDESHOW */
+.slideshow-container {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    z-index: 5000;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-content {
+    width: 100%;
+    height: 100%;
+    background-size: contain; /* Foto inteira sem cortes */
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1.5s ease-in-out;
+}
+
+.close-player {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 5100;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

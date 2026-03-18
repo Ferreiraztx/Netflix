@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="profile-screen" class="profile-container">
+      <div class="profile-content">
+        <h1>Quem está assistindo?</h1>
+        <div class="profile-list">
+          <div class="profile-card" onclick="selectProfile('Nós')">
+            <div class="profile-img" style="background-color: #008080">
+              <img src="IMG_2413.jpeg" />
+            </div>
+            <span>Nós</span>
+          </div>
+          <div class="profile-card" onclick="selectProfile('Você')">
+            <div class="profile-img" style="background-color: #2b2b2b">
+              <img src="13bd24de-f25c-4916-9703-b759d2d34145.JPG" />
+            </div>
+            <span>Você</span>
+          </div>
+          <div class="profile-card" onclick="selectProfile('Eu')">
+            <div class="profile-img" style="background-color: #e50914">
+              <img src="IMG_7139.jpeg" />
+            </div>
+            <span>Eu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-site" class="main-site" style="display: none; opacity: 0">
+      <header class="navbar">
+        <img
+          class="nav__logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        />
+      </header>
+
+      <section class="banner">
+        <div id="banner-bg" class="banner-background"></div>
+
+        <div class="banner__contents">
+          <h1 id="user-welcome">Olá!</h1>
+          <p>Aqui estão nossos momentos.</p>
+        </div>
+        <div class="banner--fadeBottom"></div>
+      </section>
+
+      <div class="row">
+        <h2 style="text-align: center; margin-bottom: 20px">
+          Destaques para você
+        </h2>
+        <div class="row__posters" id="movie-list"></div>
+      </div>
+    </div>
+
+    <div id="movie-modal" class="modal" onclick="closeModal()">
+      <div class="modal__content" onclick="event.stopPropagation()">
+        <div id="modal-img" class="modal__header"></div>
+        <div class="modal__body">
+          <h1 id="modal-title"></h1>
+          <p>Conteúdo exclusivo selecionado para você.</p>
+          <button class="play-btn">▶ Assistir</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="slideshow-player" class="slideshow-container">
+      <span class="close-player" onclick="stopSlideshow()">&times;</span>
+      <div id="slide-img" class="slide-content"></div>
+      <audio id="bg-music" loop>
+        <source src="Fotos/musica.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
