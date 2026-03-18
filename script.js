@@ -47,7 +47,7 @@ const imagens = [
         nome: "Para Sempre", 
         img: "IMG_1945.jpeg", 
         album: albumSempre,
-        musica: "Luan Santana - SINAIS (Registro Histórico) - Luan Santana (youtube).mp3"   // Nome da música do 3º álbum
+        musica: "O Amor Coloriu- Luan Santana - Luan Santana (youtube).mp3"   // Nome da música do 3º álbum
     }
 ];
 
